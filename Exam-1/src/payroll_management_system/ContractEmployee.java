@@ -1,0 +1,34 @@
+package payroll_management_system;
+
+public class ContractEmployee extends Employee {
+
+    private double hourlyRate;
+    private int hoursWorked;
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public ContractEmployee(int id, String name, String department, double hourlyRate, int hoursWorked) {
+        super(id, name, department);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    double calculateSalary() {
+        return hourlyRate * hoursWorked;
+    }
+}
